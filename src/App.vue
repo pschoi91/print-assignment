@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProductListingView from '@/views/ProductListingView.vue'
+import ProductListingView from '@/views/ProductListing/ProductListingView.vue'
 
 defineOptions({
   name: 'App',

@@ -2,10 +2,15 @@
 import { useCatalogueStore } from '@/stores/catalogue';
 import { storeToRefs } from 'pinia';
 
+import ProductTab from '@/views/ProductListing/ProductTab.vue';
+
 const { products } = storeToRefs(useCatalogueStore())
 
 defineOptions({
     name: "ProductListingView",
+    components: {
+        ProductTab
+    },
     data: () => {
         return {
             productTab: null
@@ -23,15 +28,7 @@ defineOptions({
             bg-color="deep-purple-accent-4"
             stacked
         >
-            <v-tab :value="products[0]?.sku" :text="products[0]?.title">
-                
-            </v-tab>
-            <v-tab :value="products[1]?.sku" :text="products[1]?.title">
-                
-            </v-tab>
-            <v-tab :value="products[2]?.sku" :text="products[2]?.title">
-                
-            </v-tab>
+            <product-tab v-for="product in products" v-bind:key="product.sku" v-bind="product"></product-tab>
         </v-tabs>
 
         <v-tabs-window v-model="productTab">

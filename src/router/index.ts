@@ -1,4 +1,4 @@
-import ProductListingView from '@/views/ProductListingView.vue'
+import ProductListingView from '@/views/ProductListing/ProductListingView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
