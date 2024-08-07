@@ -3,7 +3,6 @@ import { useCatalogueStore } from '@/stores/catalogue';
 import { storeToRefs } from 'pinia';
 
 import ProductCard from '@/views/ProductListing/ProductCard.vue';
-import { useProductSelectionStore } from '@/stores/productSelection';
 
 const { products } = storeToRefs(useCatalogueStore())
 
@@ -17,7 +16,9 @@ defineOptions({
 
 <template>
     <v-container>
-        <product-card v-for="product in products" v-bind:key="product.sku" v-bind="product"></product-card>
+        <v-row>
+            <product-card v-for="product in products" v-bind:key="product.sku" v-bind="product"></product-card>
+        </v-row>
     </v-container>
 </template>
 
