@@ -4164,4 +4164,13 @@ export const useCatalogueStore = defineStore({
             }
         ]
     }),
+    getters: {
+        getProductPropertiesBySKU(state){
+            return (sku: string) => {
+                const productProperties = state.products.find((product) => product.sku === sku)?.properties
+                return productProperties;
+            }
+
+        }
+    }
 })
